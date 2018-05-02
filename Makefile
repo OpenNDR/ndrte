@@ -2,7 +2,7 @@ PROJECT_NAME = ndrte
 
 RDIRS += compdeps
 RDIRS += archdeps
-RDIRS += datastruct
+RDIRS += datastructs
 RDIRS += drivers
 
 RDIRS += test
