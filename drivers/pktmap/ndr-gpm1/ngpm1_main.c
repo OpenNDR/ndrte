@@ -23,17 +23,30 @@
 
 static int ngpm1_iphook_callback( NGPM1_SKBHOOK_ARGS )
 {
-	if ( skb )
+	struct iphdr *iph = NULL;
+
+	if ( !skb )
 	{
-		struct iphdr *iph = ip_hdr( skb );
-		DRV_LOG( "{"NIPQUAD_FMT"}=>{"NIPQUAD_FMT"} : %s\n",
-					NIPQUAD( iph->saddr ),
-					NIPQUAD( iph->daddr ),
-					iph->protocol == IPPROTO_ICMP ? "ICMP" : "UNKNOWN"
-		);
+		goto drop;
 	}
 
+	iph = ip_hdr( skb );
+	if ( !iph )
+	{
+		goto pktpass;
+	}
+
+	DRV_LOG( "{"NIPQUAD_FMT"}=>{"NIPQUAD_FMT"} : %s\n",
+				NIPQUAD( iph->saddr ),
+				NIPQUAD( iph->daddr ),
+				iph->protocol == IPPROTO_ICMP ? "ICMP" : "UNKNOWN"
+	);
+
+pktpass:
 	return ngpm1_skbhook_pktpass( cpu_to_be16( ETH_P_IP), skb, orig_dev );
+
+drop:
+	return NET_RX_DROP;
 }
 
 static int __init ngpm1_load( void )
