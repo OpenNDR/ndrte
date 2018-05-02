@@ -4,4 +4,5 @@ HDRS += ndrte_queue.h
 
 SRCS += ndrte_queue.c
 
+include $(NBE_DIR)/ndr.coverage.mk
 include $(NBE_DIR)/ndr.obj.mk

@@ -17,4 +17,8 @@ addons:
     branch_pattern: master
 
 script:
-  - make; ./native/bin/selftest
+  - make
+  - ./native/bin/selftest
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -X gcov -f '!*.mk'
