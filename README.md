@@ -12,6 +12,7 @@ It runs mostly in linux userland; process task scheduling and memory mapping aut
 [![License: GPL-3.0 (Linux kernel modules)](https://img.shields.io/badge/License-GPL--3.0-green.svg)](https://opensource.org/licenses/GPL-3.0)
 [![Release: 1.0.0-rc1](https://img.shields.io/badge/release-v1.0.0--rc1-blue.svg)](https://github.com/openndr/ndrte/releases/tag/v1.0.0-rc1)
 [![Build Status](https://travis-ci.org/openndr/ndrte.svg?branch=master)](https://travis-ci.org/openndr/ndrte)
+[![codecov](https://codecov.io/gh/openndr/ndrte/branch/master/graph/badge.svg)](https://codecov.io/gh/openndr/ndrte)
 [![Coverity Status](https://img.shields.io/coverity/scan/15327.svg)](https://scan.coverity.com/projects/openndr-ndrte)
 
 ## Latest Release
