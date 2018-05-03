@@ -1,4 +1,4 @@
-TESTAPP = selftest
+COVAPP = selftest
 
 DEPLIBS += pthread
 
