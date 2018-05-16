@@ -152,7 +152,7 @@ rcu_out:
 int ngpm1_skbhook_detach( uint16_t type )
 {
 	ngpm1_shdesc_t shdesc = NULL;
-	struct packet_type *pt_iter = NULL, *pt_prev = NULL;
+	struct packet_type *pt_iter = NULL;
 
 	rcu_read_lock();
 	shdesc = ngpm1_shdesc_lookup( type );
@@ -169,10 +169,7 @@ int ngpm1_skbhook_detach( uint16_t type )
 	while ( !!(pt_iter = ngpm1_ptype_entry_rcu( shdesc->type, &(shdesc->pt.list) )) )
 	{
 		dev_remove_pack( pt_iter );
-		if ( pt_prev )
-		{
-			list_add_rcu( &(pt_prev->list), &(shdesc->ptlist) );
-		}
+		list_add_rcu( &(pt_iter->list), &(shdesc->ptlist) );
 	}
 
 	/* Step 2: Remove the skbhook */
@@ -208,11 +205,12 @@ int ngpm1_skbhook_pktpass( NGPM1_SKBHOOK_ARGS )
 
 	rcu_read_lock();
 
-	shdesc = container_of( pt, struct ngpm1_shdesc_struct, pt );
-	if ( !shdesc )
+	if ( !pt )
 	{
 		goto drop;
 	}
+
+	shdesc = container_of( pt, struct ngpm1_shdesc_struct, pt );
 
 	if ( !shdesc->orig_handler )
 	{
