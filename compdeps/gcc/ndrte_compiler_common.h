@@ -1,7 +1,11 @@
 #ifndef NDRTE_COMPILER_COMMON_H
 #define NDRTE_COMPILER_COMMON_H
 
+#ifndef __KERNEL__
 #include <stdint.h>
+#else
+#include <linux/types.h>
+#endif
 
 #define NDRTE_UNUSED __attribute__((unused))
 #define NDRTE_STRONG_INLINE inline __attribute__((always_inline))

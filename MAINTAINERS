@@ -92,17 +92,18 @@ Data Structure Commons
 M:	Hyeonho Seo <seohho@gmail.com>
 C:	dst
 S:	Broken
-F:	datastruct/*
-X:	datastruct/lockfree/
+F:	datastructs/*
+X:	datastructs/single/
+X:	datastructs/lockfree/
 
 Normal Structure
 M:	Hyeonho Seo <seohho@gmail.com>
 C:	dst/single
 S:	Maintained
-F:	datastruct/single/
+F:	datastructs/single/
 
 Lockfree Structure
 M:	Hyeonho Seo <seohho@gmail.com>
 C:	dst/lf
 S:	Maintained
-F:	datastruct/lockfree/
+F:	datastructs/lockfree/

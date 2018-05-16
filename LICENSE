@@ -14,12 +14,10 @@ Descriptions of section entries:
 		One regex pattern per line. Multiple K: lines acceptable.
 
 == General ==
-L:	MPL-1.1 <LICENSE-MPL>
+L:	MPL-2.0 <LICENSE-MPL>
 F:	/
 X:	drivers/
 
 == Linux Driver Commons ==
 L:	GPL-3.0 <LICENSE-GPL>
 F:	drivers/
-
-License
