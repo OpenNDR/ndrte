@@ -113,7 +113,7 @@ int ngpm1_skbhook_attach( uint16_t type, int (*ptr_hook_func)( NGPM1_SKBHOOK_ARG
 	while ( !!(pt_iter = ngpm1_ptype_entry_rcu( shdesc->type, &(shdesc->pt.list) )) )
 	{
 		dev_remove_pack( pt_iter );
-		if ( pt_prev )
+		if ( pt_prev && pt_prev->list.prev == LIST_POISON2 )
 		{
 			list_add_rcu( &(pt_prev->list), &(shdesc->ptlist) );
 		}
@@ -169,7 +169,10 @@ int ngpm1_skbhook_detach( uint16_t type )
 	while ( !!(pt_iter = ngpm1_ptype_entry_rcu( shdesc->type, &(shdesc->pt.list) )) )
 	{
 		dev_remove_pack( pt_iter );
-		list_add_rcu( &(pt_iter->list), &(shdesc->ptlist) );
+		if ( pt_iter->list.prev == LIST_POISON2 )
+		{
+			list_add_rcu( &(pt_iter->list), &(shdesc->ptlist) );
+		}
 	}
 
 	/* Step 2: Remove the skbhook */
