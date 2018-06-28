@@ -13,6 +13,7 @@ It runs mostly in linux userland; process task scheduling and memory mapping aut
 [![Release: 1.0.0-rc1](https://img.shields.io/badge/release-v1.0.0--rc1-blue.svg)](https://github.com/openndr/ndrte/releases/tag/v1.0.0-rc1)
 [![Build Status](https://travis-ci.org/openndr/ndrte.svg?branch=master)](https://travis-ci.org/openndr/ndrte)
 [![codecov](https://codecov.io/gh/openndr/ndrte/branch/master/graph/badge.svg)](https://codecov.io/gh/openndr/ndrte)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6fcd0e75a03d4eeaace932209af682f0)](https://www.codacy.com/app/Revimal/ndrte?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=openndr/ndrte&amp;utm_campaign=Badge_Grade)
 [![Coverity Status](https://img.shields.io/coverity/scan/15327.svg)](https://scan.coverity.com/projects/openndr-ndrte)
 
 ## Latest Release

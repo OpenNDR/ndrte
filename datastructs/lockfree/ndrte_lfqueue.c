@@ -87,7 +87,7 @@ uint64_t ndrte_lfq_enq_generic( struct ndrte_lfq *lfq, void **obj_arr, uint64_t 
 
 		if ( enq_num < num )
 		{
-			if ( enq_num == 0 | mode != NDRTE_DST_AVAIL )
+			if ( enq_num == 0 || mode != NDRTE_DST_AVAIL )
 			{
 				return 0;
 			}

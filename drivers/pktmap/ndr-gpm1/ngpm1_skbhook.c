@@ -151,7 +151,7 @@ rcu_out:
 
 int ngpm1_skbhook_detach( uint16_t type )
 {
-	ngpm1_shdesc_t shdesc = NULL;
+	ngpm1_shdesc_t shdesc;
 	struct packet_type *pt_iter = NULL;
 
 	rcu_read_lock();
