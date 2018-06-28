@@ -1,9 +1,13 @@
 #include "selftest.h"
 
-#include "ndrte_arch_endian.h"
-
 int main( int argc, char **argv )
 {
+	NTS_CALL_TC( compdeps_cmplxt_i32 );
+	NTS_REPORT( compdeps_cmplxt_i32 );
+
+	NTS_CALL_TC( compdeps_cmplxt_u32 );
+	NTS_REPORT( compdeps_cmplxt_u32 );
+
 	NTS_CALL_TC( queue_single );
 	NTS_REPORT( queue_single );
 

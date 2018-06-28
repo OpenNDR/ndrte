@@ -76,6 +76,6 @@ static NDRTE_STRONG_INLINE uint64_t ndrte_endian_conv64( uint64_t u64 )
 	ndrte_builtin_const( x ) ? NDRTE_ENDIAN_INTERNAL_IFCONST( x, size, endian ) : NDRTE_ENDIAN_INTERNAL_IF( x, size, endian )
 
 #define ndrte_endian_conv( x, size, endian ) \
-	ndrte_endian_conv_generic( x, size, NDRTE_ENDIAN_INTERNAL_##endian )
+	ndrte_endian_conv_generic( x, size, NDRTE_ENDIAN_INTERNAL_ ## endian )
 
 #endif
