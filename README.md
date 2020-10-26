@@ -1,11 +1,14 @@
 # ndrte
 
 ---
+
 **<span style="color:#AA0000">DISCLAIMER</span>**
 
 This repository has deprecated, so no longer maintained.
+
 Using codes of this project allowed, but no warranty of any kind is provided.
-The new project named ['Opusarium'](https://github.com/openndr/ndrte/releases/tag/v1.0.0-rc1) is currently under development to supersede this repository.
+
+The new project named ['Opusarium'](https://github.com/openndr/opusarium) is currently under development to supersede this repository.
 
 ---
 
